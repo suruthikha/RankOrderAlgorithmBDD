@@ -12,10 +12,17 @@ random.seed(42)
 
 ### Subsequent Rounds
 
-def RGS(R, C, A_arr, test_mode):
+def RGS(R, C, test_mode=False):
+
+    # Error checking
+    if (sum(C) <= len(R)):
+        print("Please read the README and make sure the number of residents and hospitals are correct")
 
     # Convert to 0-based indexing
     R = [[i-1 for i in r] for r in R]
+
+    # Define output array
+    A_arr = [[] for r in R[0]]
 
     # Remaining capacity
     remaining_C = C.copy()

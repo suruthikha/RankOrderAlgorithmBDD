@@ -1,3 +1,8 @@
+# Imports
+
+import baseline
+import RGS_algorithm
+
 # ====================================================================
 # Test 0: Input does not meet assumptions: total capacity < number of residents
 
@@ -73,3 +78,17 @@ C = []
 # Run test
 if __name__ == "__main__":
     A_arr = RGS(R, C, A_arr, test_mode=True) # Test 1
+
+    milliS = int(time() * 1000)*1000
+    A_arr = RGS(R, C, A_arr, test_mode=True)
+    averageRank(R,A_arr)
+    milliEnd = int(time() * 1000)*1000
+    RTime = milliEnd-milliS
+    print("Time for Algorithm:", RTime ,"microseconds")
+
+    milliRandomStart = int(time() * 1000)*1000
+    A_arrR = RGS(R, C, A_arrR, test_mode=True)
+    averageRank(R,A_arrR)
+    milliRandomEnd = int(time() * 1000)*1000
+    RTime = milliRandomEnd-milliRandomStart
+    print("Time for Random Algorithm:", RTime ,"microseconds")
