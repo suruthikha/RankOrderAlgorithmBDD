@@ -1,24 +1,73 @@
 # ====================================================================
-# Test 1
+# Test 0: Input does not meet assumptions: total capacity < number of residents
 
-# Input: Resident preferences
-# R in numpy array form
+R = [[3,2,1],
+     [3,2,1],
+     [3,2,1],
+     [3,2,1]]
+
+C = [1,1,1]
+
+# ====================================================================
+# Test 1: No residents have conflicting preferences
+
+# Resident preferences
+R = [[1,2,3],
+     [3,1,2],
+     [2,3,1]]
+
+# Original hospital capacity
+C = [1,1,1]
+
+# ====================================================================
+# Test 2: Some residents have conflicting preferences
+
+# Resident preferences
+R = [[1,2,3],
+     [1,3,2],
+     [2,3,1]]
+
+# Original hospital capacity
+C = [1,1,1]
+
+# ====================================================================
+# Test 3: More residents than number of hospitals
+
+# Resident preferences
 R = [[1,2,3],
      [1,2,3],
      [1,3,2],
      [3,1,2]]
 
-# Original capacity
+# Original hospital capacity
 C = [2,1,1]
 
-# We modify to store the results from previous hospitals.
-A_arr = [[],[],[],[]]
+# ====================================================================
+# Test 4: Less residents than total capacity
+
+R = [[3,2,1,4],
+     [3,2,4,1],
+     [2,1,4,3]]
+
+C = [1,2,1]
 
 # ====================================================================
-# Test 2
+# Test 5: Hospital with 0 capacity
+
+# Resident preferences
+R = [[1,2,3],
+     [3,1,2],
+     [2,3,1]]
+
+# Original hospital capacity
+C = [1,0,2]
 
 # ====================================================================
-# Test 3
+# Test 6: Large dataset
+
+R = [[]]
+
+C = []
 
 # ====================================================================
 # Run test
