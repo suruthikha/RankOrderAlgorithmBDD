@@ -1,7 +1,8 @@
 # Imports
 
 import baseline
-import RGS_algorithm
+from objective import averageRank
+from RGS_algorithm import RGS
 
 # ====================================================================
 # Test 0: Input does not meet assumptions: total capacity < number of residents
