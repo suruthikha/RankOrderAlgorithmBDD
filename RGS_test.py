@@ -78,17 +78,17 @@ C = []
 # ====================================================================
 # Run test
 if __name__ == "__main__":
-    A_arr = RGS(R, C, A_arr, test_mode=True) # Test 1
+    A_arr = RGS(R, C, test_mode=True) # Test 1
 
     milliS = int(time() * 1000)*1000
-    A_arr = RGS(R, C, A_arr, test_mode=True)
+    A_arr = RGS(R, C, test_mode=True)
     averageRank(R,A_arr)
     milliEnd = int(time() * 1000)*1000
     RTime = milliEnd-milliS
     print("Time for Algorithm:", RTime ,"microseconds")
-
+    print("   ")
     milliRandomStart = int(time() * 1000)*1000
-    A_arrR = RGS(R, C, A_arrR, test_mode=True)
+    A_arrR = RGS(R, C, test_mode=True)
     averageRank(R,A_arrR)
     milliRandomEnd = int(time() * 1000)*1000
     RTime = milliRandomEnd-milliRandomStart

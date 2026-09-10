@@ -15,17 +15,17 @@ random.seed(42)
 def RGS(R, C, test_mode=False):
 
     # Error checking
-    if (sum(C) <= len(R)):
+    if (sum(C) < len(R)):
         print("Please read the README and make sure the number of residents and hospitals are correct")
 
     # Convert to 0-based indexing
     R = [[i-1 for i in r] for r in R]
 
-    # Define output array
-    A_arr = [[] for r in R[0]]
-
     # Remaining capacity
     remaining_C = C.copy()
+
+    # Define output array
+    A_arr = [None for r in R]
 
     pref_round = 0
     current_applicants = list(range(len(R)))
@@ -60,15 +60,15 @@ def RGS(R, C, test_mode=False):
                 if test_mode: print_acc_rej(hospital, accepted, rejected)
             for resident in accepted: # Separating consequences of decision
                 A_arr[resident] = hospital
-                remaining_C[hospital]-= 1
+                remaining_C[hospital] -= 1
 
         if test_mode:
-          print(f"Assignments for round {pref_round+1}: ", end="")
-          print_A(A_arr)
-          print(f"Rejections for round {pref_round+1}: ", end="")
-          print_app(round_reject, end="\n")
-          print(f"Remaining capacities for round {pref_round+1}: ", end="")
-          print_C(remaining_C)
+            print(f"Assignments for round {pref_round+1}: ", end="")
+            print_A(A_arr)
+            print(f"Rejections for round {pref_round+1}: ", end="")
+            print_app(round_reject, end="\n")
+            print(f"Remaining capacities for round {pref_round+1}: ", end="")
+            print_C(remaining_C)
 
         # Update round
         current_applicants = round_reject
