@@ -57,14 +57,14 @@ Mina Jung
 + Coded initial draft of the modified RGS/Roth-Peranson algorithm (rankorder_shared_MJ.ipynb)
 + Generated example inputs to test algorithm
 + Wrote and edited README file
-Emily Sun
+<br>Emily Sun
 + Learned about mathematical foundation behind RGS
 + First draft of repo goal and assumptions for the README
 + Standardize input formatting and separate functions for printing
 + Move .ipynb functions to .py files
 + Bug fixes to helper print functions, RGS algorithm, and average rank method
 + Run tests on RGS_test.py
-Suruthikha Vijay
+<br>Suruthikha Vijay
 + Worked on editing, debugging, and testing the code in the ‘rankOrderWithEverything1.ipynb’ file
 + Created a random input generator method to generate doctor preferences given a number of doctors and a number of hospitals
 + Created a random assignment algorithm that only takes into account hospital capacity
