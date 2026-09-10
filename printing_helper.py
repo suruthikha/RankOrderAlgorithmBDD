@@ -8,7 +8,7 @@ def print_A(A):
     print("{", end="")
     for resident, hospital in enumerate(A):
         print(f"'r{resident}': ", end="")
-        if hospital: print(f"'h{hospital + 1}', ", end="")
+        if hospital is not None: print(f"'h{hospital + 1}', ", end="")
     print("}")
 
 def print_H(H):
